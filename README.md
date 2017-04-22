@@ -1,5 +1,5 @@
 # New-Eyes
-A code compendium comparing different programming paradigms.
+A code compendium comparing different programming paradigms. Check paradigms.md to read up on a few different possible paradigms and what they are.
 
 Everyone is encouraged to submit a ton of small (1-100 lines) programs. There are a lot of beginners to coding, so the purpose of this repo is:
 
@@ -24,3 +24,35 @@ Programs should have these criteria:
  ```
  * for a small function because come on, that takes up too much space and it's not like I'm gonna be using doxygen or anything. They're small code snippets, let's be real here.
  
+The structure of the files should take a form that is readable and indicates the paradigms used. The comparison is meant to be side-by-side (or over/under, whatever). Example:
+
+```
+Double - a program to double the values of a list of integers.
+Language: Node
+
+Procedural:
+
+let nums = [1, 2, 3, 4, 5]
+// iterates over the list, setting each element to double itself
+for(let i = 0; i < nums.length; i++) {
+    nums[i] *= 2;
+}
+
+Functional:
+
+let nums = [1, 2, 3, 4, 5]
+// defines a version of nums where every list element is doubled
+let doubleNums = nums.map(i => 2*i)
+
+Prototype-Oriented:
+
+function Doubled(list) {
+	this.list = list || []
+	return this.list.map(i => 2*i)
+}
+
+// define a doubled list as a data type
+var dubs = new Doubled([2, 4, 6]) // => [4, 8, 12]
+
+
+```
